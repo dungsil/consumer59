@@ -1,7 +1,13 @@
 <script lang="ts" setup>
 defineProps({
-  title: String,
-  description: String,
+  title: {
+    type: String,
+    default: undefined
+  },
+  description: {
+    type: String,
+    default: undefined
+  },
   show: Boolean
 })
 </script>
