@@ -8,9 +8,9 @@
           <a target="_blank" href="https://twitter.com/pblu_nojo/status/1582658438714494978" class="underline">
             화섬식품노조 파리바게뜨 지회 트위터
           </a>
+          (<a href="/injuction.txt" class="font-500">가처분 결과 전체 목록</a>)
         </li>
         <li>
-          <a href="/injuction.txt" class="underline">가처분 결과 전체 목록</a>
         </li>
       </ul>
     </div>
