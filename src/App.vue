@@ -32,7 +32,22 @@ const onCopy = () => {
 <template>
   <main class="flex flex-col w-full h-full px4 py10 text-center font-sans text-gray-700 space-y-16">
     <div class="flex-grow">
-      <h1 class="font-900 text-4xl">소비자59</h1>
+      <div class="flex flex-col gap2">
+        <h1 class="font-900 text-4xl">소비자59</h1>
+        <p>
+          2022년
+
+          <a
+            href="https://m.khan.co.kr/national/court-law/article/202210192022001"
+            target="_blank"
+            class="font-500 text-blue-600 underline"
+          >
+            서울지방법원이 선정한
+          </a>
+
+          소비자를 위한 59가지 문장을 쉽게 공유할 수 있습니다. 😎
+        </p>
+      </div>
 
       <div class="flex flex-col justify-center items-center gap8 mt-16">
         <p class="font-500 text-sm">오늘의 문장:</p>
