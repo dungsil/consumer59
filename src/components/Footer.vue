@@ -10,7 +10,7 @@
           </a>
         </li>
         <li>
-          <a href="/injuction.txt">가처분 결과 전체 목록</a>
+          <a href="/injuction.txt" class="underline">가처분 결과 전체 목록</a>
         </li>
       </ul>
     </div>
