@@ -2,11 +2,17 @@
   <footer class="space-y-8 text-xs">
     <div>
       <h3 class="font-900">출처</h3>
-      <a target="_blank" href="https://twitter.com/pblu_nojo/status/1582658438714494978" class="underline">
-        화섬식품노조 파리바게뜨 지회 트위터
-      </a>
 
-      <a href="/injuction.txt">가처분 결과 전체 목록</a>
+      <ul>
+        <li>
+          <a target="_blank" href="https://twitter.com/pblu_nojo/status/1582658438714494978" class="underline">
+            화섬식품노조 파리바게뜨 지회 트위터
+          </a>
+        </li>
+        <li>
+          <a href="/injuction.txt">가처분 결과 전체 목록</a>
+        </li>
+      </ul>
     </div>
 
     <p class="text-gray-600">
