@@ -10,7 +10,7 @@ const query = useUrlSearchParams<Record<string, number>>('history',{
 const text = computed(() => data[query.r])
 const hashTagedText = computed(() => `${text.value} ${hashTags}`)
 const url = computed(() => `https://c59.dun.land?r=${query.r}`)
-const { copy, copied } = useClipboard({ source: `${hashTagedText.value} ${url.value}` })
+const { copy, copied } = useClipboard({ source: computed(() => `${hashTagedText.value} ${url.value}`) })
 
 const onShareTwitter = () => window.open(
   `https://twitter.com/intent/tweet?text=${encodeURIComponent(hashTagedText.value)}&url=${encodeURIComponent(url.value)}`
