@@ -27,5 +27,8 @@ export default defineConfig({
     fontFamily: {
       sans: 'Pretendard, sans-serif'
     }
-  }
+  },
+  shortcuts: [
+    ['btn', 'inline-flex items-center p4 rounded-md font-500 text-center']
+  ]
 })

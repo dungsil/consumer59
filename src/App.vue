@@ -101,7 +101,7 @@ const onShareTwitter = () => {
 
         <div class="flex justify-around items-center gap4">
           <button type="button"
-                  class="inline-flex items-center p4 rounded-md bg-#1da1f2 font-500 text-white text-center"
+                  class="btn bg-#1da1f2 text-white text-center"
                   @click="onShareTwitter"
           >
             <span class="inline-block i-simple-icons:twitter" aria-hidden="true"></span>
