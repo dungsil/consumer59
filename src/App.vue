@@ -60,7 +60,8 @@ const data = reactive<Record<number, string>>({
   58: "노동착취로 빵 만드는 반사회적 기업 SPC 포켓몬빵 안 먹는다!",
   59: "노동자 탄압하는 SPC 대표브랜드 안가요! 안 사요!",
 })
-const random = ref(Math.floor(Math.random() * 60))
+
+const random = ref(Math.floor(Math.random() * 59))
 const hashTags = ['#멈춰라SPC', '#SPC불매', '#소비자59'].join(' ')
 
 const onShareTwitter = () => {
@@ -74,18 +75,27 @@ const onShareTwitter = () => {
 </script>
 
 <template>
-  <main class="flex flex-col w-full h-full px4 py10 text-center font-sans text-gray-700">
+  <main class="flex flex-col w-full h-full px4 py10 text-center font-sans text-gray-700 space-y-16">
     <div class="flex-grow">
       <h1 class="font-900 text-4xl">소비자59</h1>
 
       <div class="flex flex-col justify-center items-center gap8 mt-16">
         <p class="font-500 text-sm">오늘의 표현:</p>
 
-        <input
-          type="text"
-          class="w150 max-w-full h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
-          :value="data[random]"
-        >
+        <div class="flex gap4">
+          <input
+            type="text"
+            class="flex-grow w150 max-w-full h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
+            :value="data[random]"
+          >
+
+          <button type="button"
+                  class="p4 border border-gray-300 rounded-md leading-none" data-hover="bg-gray-200"
+                  @click="random = Math.floor(Math.random() * 59)"
+          >
+            <span class="inline-block w5 h5 i-heroicons:arrow-path-solid" aria-hidden="true"></span>
+          </button>
+        </div>
 
         <div class="flex justify-around items-center gap4">
           <button type="button"

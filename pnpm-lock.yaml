@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@antfu/eslint-config': ^0.27.0
   '@iconify-json/carbon': ^1.1.8
+  '@iconify-json/heroicons': ^1.1.5
   '@iconify-json/simple-icons': ^1.1.31
   '@types/node': ^18.7.23
   '@unocss/reset': ^0.45.25
@@ -32,6 +33,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': 0.27.0_7ilbxdl5iguzcjriqqcg2m5cku
   '@iconify-json/carbon': 1.1.8
+  '@iconify-json/heroicons': 1.1.5
   '@iconify-json/simple-icons': 1.1.31
   '@types/node': 18.7.23
   '@unocss/reset': 0.45.25
@@ -253,6 +255,12 @@ packages:
     resolution: {integrity: sha512-aSoMgvZyvIXadLbMXcfS+qy8CVxSExvvp8Vd/nCrupLFc0KLKSukRInnVNc63zaHqoe1NBf5xUrgfyRYYfaKWQ==}
     dependencies:
       '@iconify/types': 1.1.0
+    dev: true
+
+  /@iconify-json/heroicons/1.1.5:
+    resolution: {integrity: sha512-Ub85+YeuxEwUxfGUi2DoMJrxxqSdmdrI51turvSWTQ7jBqBfMNvQmywx7YhCu8KzoWVO3fULkU5uTVn48ALfeA==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify-json/simple-icons/1.1.31:
