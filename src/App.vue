@@ -28,16 +28,17 @@ const onCopy = () => {
       <div class="flex flex-col justify-center items-center gap8 mt-16">
         <p class="font-500 text-sm">오늘의 문장:</p>
 
-        <div class="flex gap4 max-w-full">
+        <div class="flex flex-col sm:flex-row gap4 max-w-full">
           <input
             type="text"
-            class="flex-grow w150 h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
+            class="w-full h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
+            data-sm="flex-grow w150"
             :value="data[random]"
             @focus="$e => $e.target.select()"
           >
 
           <c59-button
-            class="hidden sm:inline-block border border-gray-300 rounded-md leading-none"
+            class="border border-gray-300 rounded-md leading-none"
             data-hover="bg-gray-200"
             @click="random = Math.floor(Math.random() * 59)"
           >
