@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { data, hashTags } from './constants'
 
+const showAlert = ref(false)
 const random = ref(Math.floor(Math.random() * 59))
 
 const onShareTwitter = () => {
@@ -10,6 +11,11 @@ const onShareTwitter = () => {
     + encodeURIComponent(text)
     + '&url=' + encodeURIComponent('https://c59.dun.land?r=' + random.value)
   )
+}
+
+const onCopy = () => {
+  navigator.clipboard.writeText(data[random.value])
+  showAlert.value = true
 }
 </script>
 
@@ -44,7 +50,14 @@ const onShareTwitter = () => {
             <span class="inline-block mr1 i-simple-icons:twitter" aria-hidden="true"></span>
             트위터로 공유하기
           </c59-button>
+
+          <c59-button @click="onCopy">
+            <span class="inline-block mr1 i-heroicons:clipboard-document-list" aria-hidden="true"></span>
+            클립보드에 복사하기
+          </c59-button>
         </div>
+
+        <c59-alert title="복사가 완료되었습니다." :show="showAlert" @close="showAlert = false" />
       </div>
     </div>
 
