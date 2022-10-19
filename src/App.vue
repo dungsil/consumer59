@@ -80,7 +80,7 @@ const onShareTwitter = () => {
       <h1 class="font-900 text-4xl">소비자59</h1>
 
       <div class="flex flex-col justify-center items-center gap8 mt-16">
-        <p class="font-500 text-sm">오늘의 표현:</p>
+        <p class="font-500 text-sm">오늘의 문장:</p>
 
         <div class="flex gap4 max-w-full">
           <input
