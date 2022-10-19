@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     C59Alert: typeof import('./src/components/c59-alert.vue')['default']
     C59Button: typeof import('./src/components/c59-button.vue')['default']
-    Footer: typeof import('./src/components/Footer.vue')['default']
+    C59Footer: typeof import('./src/components/c59-footer.vue')['default']
+    Footer: typeof import('~/components/c59-footer.vue')['default']
   }
 }

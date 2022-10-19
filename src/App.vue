@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { data, hashTags } from './constants'
+import C59Footer from '~/components/c59-footer.vue'
 
 const showAlert = ref(false)
 const random = ref(Math.floor(Math.random() * 59))
@@ -61,6 +62,6 @@ const onCopy = () => {
       </div>
     </div>
 
-    <Footer />
+    <c59-footer />
   </main>
 </template>
