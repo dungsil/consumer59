@@ -1,3 +1,8 @@
+:lang(ko-KR) {
+  word-break: keep-all;
+  font-feature-settings: "ss05";
+}
+
 html,
 body,
 #app {
