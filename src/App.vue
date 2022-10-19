@@ -95,6 +95,7 @@ const onShareTwitter = () => {
                   @click="random = Math.floor(Math.random() * 59)"
           >
             <span class="inline-block w5 h5 i-heroicons:arrow-path-solid" aria-hidden="true"></span>
+            <span class="sr-only">문장 변경</span>
           </button>
         </div>
 
