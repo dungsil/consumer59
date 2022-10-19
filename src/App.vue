@@ -68,7 +68,7 @@ const onShareTwitter = () => {
   window.open(
     'https://twitter.com/intent/tweet?text='
     + encodeURIComponent(text)
-    + '&url=' + encodeURIComponent('https://dun.land/consumer59?r=' + random.value)
+    + '&url=' + encodeURIComponent('https://c59.dun.land?r=' + random.value)
   )
 }
 </script>
