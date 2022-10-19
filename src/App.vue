@@ -1,38 +1,27 @@
 <script lang="ts" setup>
 import { data, hashTags } from './constants'
 
-const r = new URLSearchParams(window.location.search).get("r")
-const random = ref(Math.floor(Math.random() * 59))
+const random = () => Math.floor(Math.random() * 59) + 1 // 기존링크 호환 유지를 위하여 +1 추가..
 
-// 공유된 페이지 접근 시 동일한 문장 표시
-if (!Number.isNaN(r)) {
-  const num = parseInt(r as string)
-  if (num >= 0 && num < 59) {
-    random.value = num
-  }
-}
+const query = useUrlSearchParams<Record<string, number>>('history',{
+  initialValue: { r: random() }
+})
 
-const showAlert = ref(false)
+const text = computed(() => data[query.r])
+const hashTagedText = computed(() => `${text.value} ${hashTags}`)
+const url = computed(() => `https://c59.dun.land?r=${query.r}`)
+const { copy, copied } = useClipboard({ source: `${hashTagedText.value} ${url.value}` })
 
-const onShareTwitter = () => {
-  const text = data[random.value] + ' ' + hashTags
-  window.open(
-    'https://twitter.com/intent/tweet?text='
-    + encodeURIComponent(text)
-    + '&url=' + encodeURIComponent('https://c59.dun.land?r=' + random.value)
-  )
-}
-
-const onCopy = () => {
-  navigator.clipboard.writeText(data[random.value])
-  showAlert.value = true
-}
+const onShareTwitter = () => window.open(
+  `https://twitter.com/intent/tweet?text=${encodeURIComponent(hashTagedText.value)}&url=${encodeURIComponent(url.value)}`
+)
 </script>
 
 <template>
   <main class="flex flex-col w-full h-full px4 py10 text-center font-sans text-gray-700 space-y-16">
-    <div class="flex-grow">
-      <div class="flex flex-col gap2">
+    <div class="flex-grow space-y-8">
+
+      <header class="flex flex-col gap2">
         <h1 class="font-900 text-4xl">소비자59</h1>
         <p>
           2022년
@@ -47,24 +36,21 @@ const onCopy = () => {
 
           소비자를 위한 59가지 문장을 쉽게 공유할 수 있습니다. 😎
         </p>
-      </div>
+      </header>
 
-      <div class="flex flex-col justify-center items-center gap8 mt-16">
-        <p class="font-500 text-sm">오늘의 문장:</p>
-
+      <main class="flex flex-col justify-center items-center gap8">
         <div class="flex flex-col sm:flex-row gap4 max-w-full">
           <input
+            v-model="text"
             type="text"
             class="w-full h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
             data-sm="flex-grow w150"
-            :value="data[random]"
-            @focus="$e => $e.target.select()"
           >
 
           <c59-button
             class="border border-gray-300 rounded-md leading-none"
             data-hover="bg-gray-200"
-            @click="random = Math.floor(Math.random() * 59)"
+            @click="query.r = random()"
           >
             <span class="inline-block w5 h5 i-heroicons:arrow-path-solid" aria-hidden="true"></span>
             <span class="sr-only">문장 변경</span>
@@ -77,14 +63,14 @@ const onCopy = () => {
             트위터로 공유하기
           </c59-button>
 
-          <c59-button @click="onCopy">
+          <c59-button @click="copy()">
             <span class="inline-block mr1 i-heroicons:clipboard-document-list" aria-hidden="true"></span>
             클립보드에 복사하기
           </c59-button>
         </div>
 
-        <c59-alert title="복사가 완료되었습니다." :show="showAlert" @close="showAlert = false" />
-      </div>
+        <c59-alert title="복사가 완료되었습니다." :show="copied" @close="copied = false" />
+      </main>
     </div>
 
     <c59-footer />
