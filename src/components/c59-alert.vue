@@ -13,8 +13,8 @@ defineProps({
 </script>
 
 <template>
-  <div v-show="show" class="rounded-md bg-green-50 p-4">
-    <div class="flex">
+  <div v-show="show" class="rounded-md bg-green-50 p4">
+    <div class="flex leading-none">
       <div class="flex-shrink-0">
         <span class="inline-block i-heroicons:clipboard-document-check-solid text-green-900" aria-hidden="true" />
       </div>
@@ -24,9 +24,11 @@ defineProps({
       <div class="ml-auto pl-3">
         <div class="-mx-1.5 -my-1.5">
 
-          <button type="button"
-                  class="inline-flex rounded-md bg-green-50 p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50"
-                  @click="$emit('close')"
+          <button
+            type="button"
+            class="btn bg-green-50 p1.5 text-green-500"
+            data-hover="bg-green-100"
+            @click="$emit('close')"
           >
             <span class="sr-only">닫기</span>
             <span class="inline-block i-heroicons:x-mark-20-solid" aria-hidden="true" />
