@@ -83,7 +83,7 @@ const onShareTwitter = () => {
 
         <input
           type="text"
-          class="w128 max-w-full h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
+          class="w150 max-w-full h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
           :value="data[random]"
         >
 
