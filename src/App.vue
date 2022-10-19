@@ -29,23 +29,21 @@ const onShareTwitter = () => {
             @focus="$e => $e.target.select()"
           >
 
-          <button type="button"
-                  class="hidden sm:inline-block p4 border border-gray-300 rounded-md leading-none" data-hover="bg-gray-200"
-                  @click="random = Math.floor(Math.random() * 59)"
+          <c59-button
+            class="hidden sm:inline-block border border-gray-300 rounded-md leading-none"
+            data-hover="bg-gray-200"
+            @click="random = Math.floor(Math.random() * 59)"
           >
             <span class="inline-block w5 h5 i-heroicons:arrow-path-solid" aria-hidden="true"></span>
             <span class="sr-only">문장 변경</span>
-          </button>
+          </c59-button>
         </div>
 
         <div class="flex justify-around items-center gap4">
-          <button type="button"
-                  class="btn bg-#1da1f2 text-white text-center"
-                  @click="onShareTwitter"
-          >
-            <span class="inline-block i-simple-icons:twitter" aria-hidden="true"></span>
+          <c59-button class="bg-#1da1f2 text-white text-center" @click="onShareTwitter">
+            <span class="inline-block mr1 i-simple-icons:twitter" aria-hidden="true"></span>
             트위터로 공유하기
-          </button>
+          </c59-button>
         </div>
       </div>
     </div>
