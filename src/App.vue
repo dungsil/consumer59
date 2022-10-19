@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { data, hashTags } from './constants'
-import C59Footer from '~/components/c59-footer.vue'
 
 const r = new URLSearchParams(window.location.search).get("r")
 const random = ref(Math.floor(Math.random() * 59))
@@ -8,7 +7,6 @@ const random = ref(Math.floor(Math.random() * 59))
 // 공유된 페이지 접근 시 동일한 문장 표시
 if (!Number.isNaN(r)) {
   const num = parseInt(r as string)
-  console.log(num)
   if (num >= 0 && num < 59) {
     random.value = num
   }

@@ -10,6 +10,5 @@ declare module '@vue/runtime-core' {
     C59Alert: typeof import('./src/components/c59-alert.vue')['default']
     C59Button: typeof import('./src/components/c59-button.vue')['default']
     C59Footer: typeof import('./src/components/c59-footer.vue')['default']
-    Footer: typeof import('~/components/c59-footer.vue')['default']
   }
 }
