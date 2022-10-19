@@ -7,7 +7,7 @@ const query = useUrlSearchParams<Record<string, number>>('history',{
   initialValue: { r: random() }
 })
 
-const text = computed(() => data[query.r])
+const text = computed(() => data[query.r - 1])
 const hashTagedText = computed(() => `${text.value} ${hashTags}`)
 const url = computed(() => `https://c59.dun.land?r=${query.r}`)
 const { copy, copied } = useClipboard({ source: computed(() => `${hashTagedText.value} ${url.value}`) })
@@ -69,7 +69,7 @@ const onShareTwitter = () => window.open(
           </c59-button>
         </div>
 
-        <c59-alert title="복사가 완료되었습니다." :show="copied" @close="copied = false" />
+        <c59-alert title="복사가 완료되었습니다." :show="copied" />
       </main>
     </div>
 
