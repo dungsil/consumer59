@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useHead } from '@vueuse/head'
 import { data, hashTags } from './constants'
 
 const random = () => Math.floor(Math.random() * 59) + 1 // 기존링크 호환 유지를 위하여 +1 추가..
@@ -16,21 +15,6 @@ const { copy, copied } = useClipboard({ source: computed(() => `${hashTagedText.
 const onShareTwitter = () => window.open(
   `https://twitter.com/intent/tweet?text=${encodeURIComponent(hashTagedText.value)}&url=${encodeURIComponent(url.value)}`
 )
-
-useHead({
-  meta: [
-    { name: 'description', content: hashTagedText },
-    { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://c59.dun.land' },
-    { property: 'og:title', content: '소비자59' },
-    { property: 'og:description', content: hashTagedText },
-    { property: 'twitter:url', content: 'https://c59.dun.land' },
-    { property: 'twitter:domain', content: 'c59.dun.land' },
-    { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: '소비자59' },
-    { name: 'twitter:description', content: hashTagedText },
-  ]
-})
 </script>
 
 <template>
