@@ -29,12 +29,12 @@ const onShareTwitter = () => window.open(
           <a
             href="https://m.khan.co.kr/national/court-law/article/202210192022001"
             target="_blank"
-            class="font-500 text-blue-600 underline"
-          >
-            서울지방법원이 선정한
-          </a>
+            class="font-700 text-blue-600"
+            data-hover="underline"
+          >서울지방법원이 선정</a>한 소비자를 위한
 
-          소비자를 위한 59가지 문장을 쉽게 공유할 수 있습니다. 😎
+          <a target="_blank" href="https://twitter.com/pblu_nojo/status/1582658438714494978" class="font-700 text-blue-600" data-hover="underline">
+            59가지 문장</a>을 쉽게 공유할 수 있습니다. 😎
         </p>
       </header>
 
