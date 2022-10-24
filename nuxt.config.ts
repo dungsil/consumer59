@@ -28,6 +28,8 @@ export default defineNuxtConfig({
         { id: 'twitter:url', name: 'twitter:url', content: 'https://c59.dun.land' },
         { id: 'twitter:creator', name: 'twitter:creator', content: '@dun__land' },
         { id: 'twitter:site', name: 'twitter:site', content: '@dun__land' },
+
+        { id: 'fb:id', name: 'fb:app_id', content: '3140497639595640' }
       ],
       link: [
         { rel: 'preconnect', href: 'https://dun.land' },
