@@ -7,7 +7,6 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     head: {
-      title: '소비자59',
       titleTemplate: `%s · 소비자59`,
 
       htmlAttrs: {
