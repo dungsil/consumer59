@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { data, hashTags } from './constants'
 import { useHead } from '#head'
-import { watch } from '#imports'
+import { computed, watch } from '#imports'
 import { useRoute } from '#app'
 
 const router = useRoute()
@@ -14,6 +14,7 @@ const query = useUrlSearchParams<Record<string, number>>('history',{
 const text = computed(() => data[query.r - 1])
 const hashTaggedText = computed(() => `${text.value} ${hashTags}`)
 const url = computed(() => `https://c59.dun.land?r=${query.r}`)
+const ogImage = computed(() => `https://dun.land/oas/consumer59/${text.value}`)
 const { copy, copied } = useClipboard({ source: computed(() => `${hashTaggedText.value} ${url.value}`) })
 
 const onShareTwitter = () => window.open(
@@ -23,11 +24,15 @@ const onShareTwitter = () => window.open(
 useHead({
   title: text.value,
   meta: [
+    { id: 'og:url', property: 'og:url', content: url.value },
     { id: 'twitter:url', name: 'twitter:url', content: url.value },
 
     { id: 'description', name: 'description', content: hashTaggedText.value },
     { id: 'og:description', property: 'og:description', content: hashTaggedText.value },
     { id: 'twitter:description', name: 'twitter:description', content: hashTaggedText.value },
+
+    { id: 'og:image', property: 'og:image', content: ogImage.value },
+    { id: 'twitter:image', name: 'twitter:image', content: ogImage.value },
   ]
 })
 
