@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { data, hashTags } from './constants'
 import { useHead } from '#head'
-import { computed, watch } from '#imports'
 import { useRoute } from '#app'
+import { data, hashTags } from './constants'
+import { computed, watch } from '#imports'
 
 const router = useRoute()
 
@@ -14,7 +14,7 @@ const query = useUrlSearchParams<Record<string, number>>('history',{
 const text = computed(() => data[query.r - 1])
 const hashTaggedText = computed(() => `${text.value} ${hashTags}`)
 const url = computed(() => `https://c59.dun.land?r=${query.r}`)
-const ogImage = computed(() => `https://dun.land/oas/consumer59/${text.value}`)
+const ogImage = computed(() => `https://dun.land/oas/consumer59/${encodeURIComponent(text.value)}`)
 const { copy, copied } = useClipboard({ source: computed(() => `${hashTaggedText.value} ${url.value}`) })
 
 const onShareTwitter = () => window.open(
