@@ -26,13 +26,13 @@ useHead({
   ]
 })
 
-watch(text, (v) => {
+watch(hashTaggedText, (content) => {
   useHead({
-    title: v,
+    title: text.value,
     meta: [
-      { id: 'description', name: 'description', content: hashTaggedText.value },
-      { id: 'og:description', property: 'og:description', content: hashTaggedText.value },
-      { id: 'twitter:description', name: 'twitter:description', content: hashTaggedText.value },
+      { id: 'description', name: 'description', content },
+      { id: 'og:description', property: 'og:description', content },
+      { id: 'twitter:description', name: 'twitter:description', content },
     ]
   })
 })
