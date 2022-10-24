@@ -37,5 +37,9 @@ export default defineNuxtConfig({
   },
   nitro: {
     preset: 'netlify'
+  },
+  build: {
+    extractCSS: true,
+    optimizeCSS: true
   }
 })
