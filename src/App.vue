@@ -49,7 +49,7 @@ watch(hashTaggedText, (content) => {
 </script>
 
 <template>
-  <main class="flex flex-col w-full h-full px4 py10 text-center font-sans text-gray-700 space-y-16">
+  <main class="!flex flex-col w-full h-full px4 py10 text-center font-sans text-gray-700 space-y-16" style="display: none;">
     <div class="flex-grow space-y-8">
 
       <header class="flex flex-col gap2">
