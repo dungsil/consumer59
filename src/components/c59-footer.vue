@@ -19,9 +19,13 @@
       이 사이트는 <b>파리바게뜨노동자 힘내라 공동행동</b> 및 <b>화섬식품노조 파리바게뜨지회</b>와는 관련없는 사이트임을 밝힙니다.
     </p>
 
-    <div class="flex justify-center items-center gap4">
+    <p class="text-gray-600">사이트 오류 및 문의는 아래의 링크를 통해 남겨주세요.</p>
+    <div class="flex justify-center items-center gap4 !mt2">
       <a href="https://github.com/dun-land/consumer59" target="_blank" title="깃허브 바로가기">
         <span class="inline-block i-simple-icons:github" aria-hidden="true"></span>
+      </a>
+      <a href="https://twitter.com/dun__land" target="_blank" title="제작자 트위터(@dun__land) 바로가기">
+        <span class="inline-block i-simple-icons:twitter" aria-hidden="true"></span>
       </a>
     </div>
   </footer>
