@@ -2,7 +2,6 @@
 import { data, hashTags } from './constants'
 
 const random = () => Math.floor(Math.random() * 59) + 1 // 기존링크 호환 유지를 위하여 +1 추가..
-
 const query = useUrlSearchParams<Record<string, number>>('history',{
   initialValue: { r: random() }
 })
@@ -15,6 +14,17 @@ const { copy, copied } = useClipboard({ source: computed(() => `${hashTaggedText
 const onShareTwitter = () => window.open(
   `https://twitter.com/intent/tweet?text=${encodeURIComponent(hashTaggedText.value)}&url=${encodeURIComponent(url.value)}`
 )
+
+watch(text, (v) => {
+  useHead({
+    title: v,
+    meta: [
+      { id: 'description', name: 'description', content: hashTaggedText.value },
+      { id: 'og:description', property: 'og:description', content: hashTaggedText.value },
+      { id: 'twitter:description', name: 'twitter:description', content: hashTaggedText.value },
+    ]
+  })
+})
 </script>
 
 <template>
