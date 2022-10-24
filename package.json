@@ -2,18 +2,8 @@
   "private": true,
   "packageManager": "pnpm@7.12.0",
   "scripts": {
-    "build": "vite-ssg build",
-    "dev": "vite --port 3333 --open",
-    "lint": "eslint --ext .ts,.vue --ignore-path .gitignore .",
-    "typecheck": "vue-tsc --noEmit",
-    "preview": "vite preview",
-    "test": "vitest",
-    "up": "taze major -I"
-  },
-  "dependencies": {
-    "@vueuse/core": "^9.3.0",
-    "@vueuse/head": "^0.9.8",
-    "vue": "^3.2.39"
+    "dev": "nuxi dev",
+    "build": "nuxi build"
   },
   "devDependencies": {
     "@dungsil/prettier-config": "^1.2.1",
@@ -21,27 +11,27 @@
     "@iconify-json/simple-icons": "^1.1.31",
     "@nuxtjs/eslint-config-typescript": "^11.0.0",
     "@types/node": "^18.7.23",
+    "@unocss/nuxt": "^0.45.30",
     "@unocss/reset": "^0.45.25",
     "@vitejs/plugin-vue": "^3.1.0",
-    "@vue/test-utils": "^2.0.2",
+    "@vueuse/nuxt": "^9.3.1",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
-    "jsdom": "^20.0.0",
+    "nuxt": "3.0.0-rc.12",
     "pnpm": "^7.12.2",
     "prettier": "^2.7.1",
-    "taze": "^0.8.2",
     "typescript": "^4.8.3",
     "unocss": "^0.45.25",
-    "unplugin-auto-import": "^0.11.2",
-    "unplugin-vue-components": "^0.22.7",
     "vite": "^3.1.3",
-    "vite-plugin-pages": "^0.26.0",
-    "vite-ssg": "^0.21.1",
-    "vitest": "^0.23.4",
-    "vue-tsc": "^0.40.13"
+    "@vueuse/core": "^9.3.0",
+    "vue": "^3.2.39",
+    "webpack": "^5.74.0"
   },
   "prettier": "@dungsil/prettier-config",
   "eslintConfig": {
-    "extends": ["@nuxtjs/eslint-config-typescript", "prettier"]
+    "extends": [
+      "@nuxtjs/eslint-config-typescript",
+      "prettier"
+    ]
   }
 }

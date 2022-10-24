@@ -1,10 +1,14 @@
 <script lang="ts" setup>
 import { data, hashTags } from './constants'
+import { useHead } from '#head'
+import { watch } from '#imports'
+import { useRoute } from '#app'
+
+const router = useRoute()
 
 const random = () => Math.floor(Math.random() * 59) + 1 // 기존링크 호환 유지를 위하여 +1 추가..
-
 const query = useUrlSearchParams<Record<string, number>>('history',{
-  initialValue: { r: random() }
+  initialValue: { r: router.query.r as unknown as number ?? random() }
 })
 
 const text = computed(() => data[query.r - 1])
@@ -15,6 +19,26 @@ const { copy, copied } = useClipboard({ source: computed(() => `${hashTaggedText
 const onShareTwitter = () => window.open(
   `https://twitter.com/intent/tweet?text=${encodeURIComponent(hashTaggedText.value)}&url=${encodeURIComponent(url.value)}`
 )
+
+useHead({
+  title: text.value,
+  meta: [
+    { id: 'description', name: 'description', content: hashTaggedText.value },
+    { id: 'og:description', property: 'og:description', content: hashTaggedText.value },
+    { id: 'twitter:description', name: 'twitter:description', content: hashTaggedText.value },
+  ]
+})
+
+watch(hashTaggedText, (content) => {
+  useHead({
+    title: text.value,
+    meta: [
+      { id: 'description', name: 'description', content },
+      { id: 'og:description', property: 'og:description', content },
+      { id: 'twitter:description', name: 'twitter:description', content },
+    ]
+  })
+})
 </script>
 
 <template>

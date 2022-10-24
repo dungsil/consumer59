@@ -1,12 +1,6 @@
-.DS_Store
-.vite-ssg-dist
-.vite-ssg-temp
-*.local
-dist
-dist-ssr
-node_modules
+.nuxt/
+.netlify/
 .idea/
-*.log
-*.iml
-
-.vercel
+node_modules/
+dist/
+*.uml
