@@ -45,6 +45,7 @@ const onShareTwitter = () => window.open(
             type="text"
             class="w-full h16 px2 border border-gray-300 rounded-xl font-900 text-xl text-center"
             data-sm="flex-grow w150"
+            data-focus="outline-none ring-2 ring-offset-2 ring-indigo-600"
           >
 
           <c59-button
