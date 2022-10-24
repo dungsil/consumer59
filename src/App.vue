@@ -23,6 +23,8 @@ const onShareTwitter = () => window.open(
 useHead({
   title: text.value,
   meta: [
+    { id: 'twitter:url', name: 'twitter:url', content: url.value },
+
     { id: 'description', name: 'description', content: hashTaggedText.value },
     { id: 'og:description', property: 'og:description', content: hashTaggedText.value },
     { id: 'twitter:description', name: 'twitter:description', content: hashTaggedText.value },
