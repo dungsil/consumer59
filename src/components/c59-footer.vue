@@ -24,8 +24,9 @@
       <a href="https://github.com/dun-land/consumer59" target="_blank" title="깃허브 바로가기">
         <span class="inline-block i-simple-icons:github" aria-hidden="true"></span>
       </a>
-      <a href="https://twitter.com/dun__land" target="_blank" title="제작자 트위터(@dun__land) 바로가기">
-        <span class="inline-block i-simple-icons:twitter" aria-hidden="true"></span>
+
+      <a href="https://dun.land/@dungsil" target="_blank" title="제작자 마스토돈(@dungsil@dun.land) 바로가기">
+        <span class="inline-block i-simple-icons:mastodon" aria-hidden="true"></span>
       </a>
     </div>
   </footer>
