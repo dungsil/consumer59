@@ -29,6 +29,12 @@ export default defineConfig({
     }
   },
   shortcuts: [
-    ['btn', 'inline-flex justify-center items-center p4 rounded-md font-500 text-center']
+    [
+      'btn',
+      [
+        'inline-flex justify-center items-center p4 rounded-md font-500 text-center',
+        'disabled:(bg-opacity-50 cursor-not-allowed)',
+      ].join(' ')
+    ]
   ]
 })
