@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { useHead } from '#head'
 import { useRoute } from '#app'
 import { data, hashTags } from './constants'
 import { computed, useClipboard, useUrlSearchParams, watch } from '#imports'

@@ -33,15 +33,11 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'preconnect', href: 'https://dun.land' },
-        { rel: 'stylesheet', href: 'https://dun.land/pretendard/v1.3.3/pretendard.min.css' }
+        { rel: 'stylesheet', href: 'https://dun.land/x/pretendard%401.3.7/pretendard.min.css' }
       ]
     }
   },
   nitro: {
     preset: 'netlify'
-  },
-  build: {
-    extractCSS: true,
-    optimizeCSS: true
   }
 })
