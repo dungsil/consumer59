@@ -33,7 +33,7 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'preconnect', href: 'https://dun.land' },
-        { rel: 'stylesheet', href: 'https://dun.land/x/pretendard%401.3.7/pretendard.min.css' }
+        { rel: 'stylesheet', href: 'https://dun.land/x/pretendard%401.3.9/pretendard.min.css' }
       ]
     }
   },
